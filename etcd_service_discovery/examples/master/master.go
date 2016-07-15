@@ -8,17 +8,27 @@ import (
 )
 
 func main() {
+
 	m, err := sd.NewMaster("sd-test", []string{
+		"http://192.168.139.134:2079",
+		"http://192.168.139.134:2179",
+		"http://192.168.139.134:2279",
 		"http://192.168.139.134:2379",
 		"http://192.168.139.134:2479",
-		"http://192.168.139.134:2579",
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
 	for {
-		log.Println("all ->", m.GetNodes())
-		log.Println("all(strictly) ->", m.GetNodesStrictly())
+
+		if len(m.GetNodes()) > 0 {
+			log.Printf("all -> %v \n", m.GetNodes())
+		}
+
+		if len(m.GetNodesStrictly()) > 0 {
+			log.Printf("all(strictly) -> %v \n", m.GetNodesStrictly())
+		}
+
 		time.Sleep(time.Second * 2)
 	}
 }
