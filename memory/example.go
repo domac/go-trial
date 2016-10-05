@@ -17,7 +17,7 @@ func mem(n int) {
 		}
 		ps = p
 	}
-	mem, _ := ps.MemoryInf()
+	mem, _ := ps.MemoryInfo()
 	fmt.Printf("%d. VMS: %d MB, RSS: %d MB\n", n, mem.VMS>>20, mem.RSS>>20)
 }
 
