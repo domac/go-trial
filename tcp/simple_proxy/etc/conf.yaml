@@ -1,0 +1,9 @@
+bind: 0.0.0.0:9999
+wait_queue_len: 100
+max_conn: 50
+timeout: 3
+failover: 3
+stats: 0.0.0.0:19999
+backend:
+    - 127.0.0.1:12000
+    - 127.0.0.1:22000
