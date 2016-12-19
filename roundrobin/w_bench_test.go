@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func BenchmarkW1_Next(b *testing.B) {
+func BenchmarkNginx(b *testing.B) {
 	b.ReportAllocs()
 	rand.Seed(time.Now().UnixNano())
 	w := NewWeightedRR(RR_NGINX)
@@ -21,7 +21,7 @@ func BenchmarkW1_Next(b *testing.B) {
 	}
 }
 
-func BenchmarkW2_Next(b *testing.B) {
+func BenchmarkLVS(b *testing.B) {
 	b.ReportAllocs()
 	rand.Seed(time.Now().UnixNano())
 	w := NewWeightedRR(RR_LVS)
