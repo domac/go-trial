@@ -30,12 +30,12 @@ func main() {
 	go metrics.CaptureRuntimeMemStats(r, time.Second*5)
 
 	go influxdb.InfluxDB(
-		r,                         // metrics registry
-		time.Second*5,             // 时间间隔
-		"http://10.197.32.2:8086", // InfluxDB url
-		"helloWorld",              // InfluxDB 数据库名
-		"",                        // InfluxDB user
-		"",                        // InfluxDB password
+		r,                             // metrics registry
+		time.Second*5,                 // 时间间隔
+		"http://192.168.139.140:8086", // InfluxDB url
+		"helloWorld",                  // InfluxDB 数据库名
+		"",                            // InfluxDB user
+		"",                            // InfluxDB password
 	)
 
 	time.Sleep(time.Second * 10)
