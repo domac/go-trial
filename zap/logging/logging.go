@@ -9,7 +9,7 @@ var mylogger zap.Logger
 // Logger returns the logger instance
 func Logger() zap.Logger {
 	if mylogger == nil {
-		mylogger = zap.New(zap.NewJSONEncoder())
+		mylogger = zap.New(zap.NewTextEncoder())
 	}
 	return mylogger
 }

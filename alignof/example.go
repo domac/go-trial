@@ -35,9 +35,9 @@ func main() {
 		b byte
 	}{}
 
-	fmt.Printf("v1: %d , %d \n", unsafe.Alignof(v1), unsafe.Sizeof(v1)) // 4+4
-	fmt.Printf("v2: %d , %d \n", unsafe.Alignof(v2), unsafe.Sizeof(v2)) // 1+1
-	fmt.Printf("v3: %d , %d \n", unsafe.Alignof(v3), unsafe.Sizeof(v3)) // 24 + 8 + 8
-	fmt.Printf("v4: %d , %d \n", unsafe.Alignof(v4), unsafe.Sizeof(v4)) // 24 + 8
-	fmt.Printf("v5: %d , %d \n", unsafe.Alignof(v5), unsafe.Sizeof(v5)) // 4 +4+ 4
+	fmt.Printf("v1- align:%d , size:%d \n", unsafe.Alignof(v1), unsafe.Sizeof(v1)) // 4+4
+	fmt.Printf("v2- align:%d , size:%d \n", unsafe.Alignof(v2), unsafe.Sizeof(v2)) // 1+1
+	fmt.Printf("v3- align:%d , size:%d \n", unsafe.Alignof(v3), unsafe.Sizeof(v3)) // 8+ 24 + 8
+	fmt.Printf("v4- align:%d , size:%d \n", unsafe.Alignof(v4), unsafe.Sizeof(v4)) // 24 + 8
+	fmt.Printf("v5- align:%d , size:%d \n", unsafe.Alignof(v5), unsafe.Sizeof(v5)) // 4 +4+ 4
 }
